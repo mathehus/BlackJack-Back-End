@@ -29,7 +29,6 @@ namespace BlackJack
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_apresentacao));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Iniciar = new System.Windows.Forms.Button();
@@ -38,11 +37,11 @@ namespace BlackJack
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::BlackJack.Properties.Resources._0;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Image = global::BlackJack.Properties.Resources._001;
+            this.pictureBox1.Location = new System.Drawing.Point(-19, -3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(344, 454);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(526, 361);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -77,7 +76,6 @@ namespace BlackJack
             this.Controls.Add(this.btn_Iniciar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "form_apresentacao";

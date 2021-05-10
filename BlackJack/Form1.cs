@@ -18,6 +18,7 @@ namespace BlackJack
             btn_reiniciar.Enabled = false;
             btn_jogar_2.Enabled = false;
             btn_parar_2.Enabled = false;
+            btn_parar_1.Enabled = false;
         }
 
         int pontos_A = 0;
@@ -55,24 +56,26 @@ namespace BlackJack
         {
             int x, total_pontos=0;
             Random sorteio = new Random();
-            x = sorteio.Next(1, 14);
+            x = sorteio.Next(1, 16);
 
 
             switch (x)
             {
-                case 1:     A.Image = Properties.Resources.a;    total_pontos += 1;     break;
-                case 2:     A.Image = Properties.Resources._2;   total_pontos += 2;     break;
-                case 3:     A.Image = Properties.Resources._3;   total_pontos += 3;     break;
-                case 4:     A.Image = Properties.Resources._4;   total_pontos += 4;     break;
-                case 5:     A.Image = Properties.Resources._5;   total_pontos += 5;     break;
-                case 6:     A.Image = Properties.Resources._6;   total_pontos += 6;     break;
-                case 7:     A.Image = Properties.Resources._7;   total_pontos += 7;     break;
-                case 8:     A.Image = Properties.Resources._8;   total_pontos += 8;     break;
-                case 9:     A.Image = Properties.Resources._9;   total_pontos += 9;     break;
-                case 10:    A.Image = Properties.Resources._10;  total_pontos += 10;    break;
-                case 11:    A.Image = Properties.Resources.J;    total_pontos += 11;    break;
-                case 12:    A.Image = Properties.Resources.Q;    total_pontos += 12;    break;
-                case 13:    A.Image = Properties.Resources.K;    total_pontos += 13;    break;
+                case 1:     A.Image = Properties.Resources.num1;    total_pontos += 1;     break;
+                case 2:     A.Image = Properties.Resources.num2;   total_pontos += 2;     break;
+                case 3:     A.Image = Properties.Resources.num3;   total_pontos += 3;     break;
+                case 4:     A.Image = Properties.Resources.num4;   total_pontos += 4;     break;
+                case 5:     A.Image = Properties.Resources.num5;   total_pontos += 5;     break;
+                case 6:     A.Image = Properties.Resources.num6;   total_pontos += 6;     break;
+                case 7:     A.Image = Properties.Resources.num7;   total_pontos += 7;     break;              
+                case 8:     A.Image = Properties.Resources.num8;   total_pontos += 8;    break;
+                case 9:     A.Image = Properties.Resources.num9;   total_pontos += 9;     break;
+                case 10:    A.Image = Properties.Resources.num10;  total_pontos += 10;    break;
+                case 11:    A.Image = Properties.Resources.numJ;    total_pontos += 11;    break;
+                case 12:    A.Image = Properties.Resources.numQ;    total_pontos += 12;    break;
+                case 13:    A.Image = Properties.Resources.numK;    total_pontos += 13;    break;
+                case 14:    A.Image = Properties.Resources.numC;    total_pontos += 40;   break;
+                case 15:    A.Image = Properties.Resources.numC2;    total_pontos -= 5;  break;
             }
 
             if (jogador == 1)
@@ -86,9 +89,11 @@ namespace BlackJack
             
 
             Jogada(pictureBox1, 1);
-           
 
-            if(pontos_A <= 21)
+            btn_parar_1.Enabled = true;
+
+
+            if (pontos_A <= 21)
             {   // JOGANDO
                 lbl_Pontos_A.Text = Convert.ToString(pontos_A);
                 if(pontos_A == 21)
@@ -118,7 +123,7 @@ namespace BlackJack
             pontos_B = 0;
             btn_jogar_1.Enabled = true;
             btn_jogar_2.Enabled = false;
-            btn_parar_1.Enabled = true;
+            btn_parar_1.Enabled = false;
             btn_parar_2.Enabled = false;
 
             btn_reiniciar.Enabled = false;
@@ -132,7 +137,10 @@ namespace BlackJack
         }
 
         private void btn_jogar_2_Click(object sender, EventArgs e)
+
         {
+
+            btn_parar_2.Enabled = true;
             //  ESCOLHER AS CARTAS
             Jogada(pictureBox2, 2);
 
@@ -168,7 +176,7 @@ namespace BlackJack
             btn_jogar_1.Enabled = false;
             btn_parar_1.Enabled = false;
             btn_jogar_2.Enabled = true;
-            btn_parar_2.Enabled = true;
+            btn_parar_2.Enabled = false;
         }
 
         private void btn_parar_2_Click(object sender, EventArgs e)
